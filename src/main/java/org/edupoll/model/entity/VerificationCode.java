@@ -16,11 +16,12 @@ import lombok.Setter;
 @Getter
 public class VerificationCode {
 		@Id
-		@GeneratedValue(strategy = GenerationType.SEQUENCE)
+		@GeneratedValue(strategy = GenerationType.AUTO)
 		private Long id;
 		
 		private String code;  //인증코드
 		private String email; //인증코드를 발급시킨 이메일
 		private Date created; //발급된 날짜	
 		private String state; //통과여부
+	
 }

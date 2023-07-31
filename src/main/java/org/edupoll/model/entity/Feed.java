@@ -23,7 +23,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Feed {
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE )
+	@GeneratedValue(strategy = GenerationType.AUTO )
 	private Long id;
 	
 	@ManyToOne

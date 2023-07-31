@@ -103,7 +103,7 @@ public class KakaoAPIService {
 		return new KakaoAccount(email, nickname, proflieImage);
 
 	}
-	
+	//카카오톡 연결 해제를 하는 메서드
 	@Transactional
 	public void deleteSocialUser(String tokenEmailValue) throws JsonMappingException, JsonProcessingException {
 		User found = userRepository.findByEmail(tokenEmailValue).orElseThrow();

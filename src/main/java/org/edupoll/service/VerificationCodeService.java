@@ -15,8 +15,11 @@ import org.springframework.stereotype.Service;
 
 import jakarta.mail.MessagingException;
 import jakarta.transaction.Transactional;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
+@Slf4j
+
 public class VerificationCodeService {
 
 	@Autowired
@@ -29,8 +32,9 @@ public class VerificationCodeService {
 	@Transactional
 	public void codeIssuanceRequest(CodeIssuanceRequest dto) throws MessagingException, VerifyCodeException, AlreadyVerifiedException {
 		//이미 인증을 통과했는지 확인하는 작업
-		Optional<VerificationCode> foundConde = verificationCodeRepository.findByEmail(dto.getEmail());
-		if(foundConde.isPresent() && foundConde.get().getState() != null) {
+		Optional<VerificationCode> foundCode = verificationCodeRepository.findByEmail(dto.getEmail());
+		if(foundCode.isPresent() && foundCode.get().getState() != null) {
+			log.info("foundCode = {} ", foundCode.get().getEmail());
 			throw new AlreadyVerifiedException("인증처리가 완료 되었습니다.");
 		}
 		

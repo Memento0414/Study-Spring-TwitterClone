@@ -21,7 +21,7 @@ import lombok.Setter;
 
 public class ProfileImage {
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
 	private String fileAddress; //실제파일 위치

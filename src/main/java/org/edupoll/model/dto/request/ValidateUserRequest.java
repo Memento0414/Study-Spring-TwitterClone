@@ -9,8 +9,5 @@ public class ValidateUserRequest {
 	private String email;
 	@NotBlank
 	private String password;
-	
 
-	
-	
 }

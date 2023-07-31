@@ -18,7 +18,6 @@ public class UpdateProfileRequest {
 	
 	private MultipartFile profile;
 	
-	//private MultipartFile[](images);
-	// private 
+
 		
 }
